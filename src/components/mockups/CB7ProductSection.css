@@ -1,0 +1,32 @@
+.cb7-section {
+  position: relative;
+  padding: 64px 24px;
+  background: transparent;
+  color: var(--white);
+}
+
+.cb7-decor {
+  position: absolute;
+  right: 6%;
+  top: 8px;
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(233,244,249,0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.cb7-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .cb7-section { padding: 48px 20px; }
+  .cb7-decor { font-size: 80px; right: 4%; }
+}
+
+@media (max-width: 480px) {
+  .cb7-section { padding: 32px 14px; }
+  .cb7-decor { display: none; }
+}

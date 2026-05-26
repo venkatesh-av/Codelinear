@@ -1,0 +1,297 @@
+
+.cs-section {
+  position: relative;
+  background: #000D12; 
+  width: 100%;
+  padding: 100px 0 140px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.cs-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cs-heading-block {
+  margin-bottom: 72px;
+}
+
+.cs-slider-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1194px;
+  height: 480px; 
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.cs-card-peaking-bg {
+  position: absolute;
+  left: 0;
+  top: 33px;
+  width: 887px;
+  height: 383px;
+  border-radius: 16px;
+  opacity: 0.3;
+  background: #01141B; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cs-peaking-graphic {
+  width: 368px;
+  height: 333px;
+  margin-left: 21px;
+  border-radius: 10px;
+  background: #07193C; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.cs-peaking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-category-peaking {
+  color: #2490BB;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  opacity: 0.5;
+}
+
+.cs-title-peaking {
+  width: 250px;
+  height: 24px;
+  background: rgba(233, 244, 249, 0.1);
+  border-radius: 4px;
+}
+
+.cs-card-active {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1015px;
+  height: 438px;
+  border-radius: 18px;
+  background: #01141B;
+  overflow: hidden;
+  display: flex;
+  border: 1px solid rgba(233, 244, 249, 0.04);
+  box-shadow: -20px 20px 50px rgba(0, 13, 18, 0.5);
+  z-index: 5;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.cs-card-active:hover {
+  transform: translateY(-4px);
+  box-shadow: -20px 24px 60px rgba(0, 180, 253, 0.08);
+  border-color: rgba(0, 180, 253, 0.15);
+}
+
+.cs-card-graphic {
+  width: 422px;
+  height: 100%;
+  background: #07193C; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cs-card-graphic .geometric-four-stars {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-card-active:hover .cs-card-graphic .geometric-four-stars {
+  transform: scale(1.05) rotate(1.5deg);
+}
+
+.cs-card-content {
+  flex: 1;
+  padding: 55px 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.cs-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.cs-card-category {
+  color: #2490BB;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+
+.cs-card-meta .text-block--article-large {
+  max-width: 460px;
+}
+
+.cs-read-more-button {
+  min-height: 44px;
+  border-color: rgba(233, 244, 249, 0.55);
+  border-radius: 10px;
+  color: rgba(233, 244, 249, 0.55);
+  font-size: 12px;
+  padding: 12px 18px;
+}
+
+.cs-read-more-button:hover {
+  background: #E9F4F9;
+  border-color: #E9F4F9;
+  color: #00B4FD;
+  box-shadow: 0 8px 24px rgba(0, 180, 253, 0.35);
+}
+
+.cs-zoomerr-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cs-zoomerr-text {
+  color: #586E84;
+  font-family: 'Roboto', -apple-system, sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cs-controls-row {
+  width: 100%;
+  max-width: 1015px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.cs-navigation {
+  display: flex;
+  align-items: center;
+  gap: 31px;
+}
+
+.cs-pagination-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #0B4B63;
+  box-sizing: border-box;
+  transition: background-color 0.28s ease, width 0.28s ease, border-color 0.28s ease;
+}
+
+.cs-dot.active-pill {
+  width: 38px;
+  height: 12px;
+  border-radius: 6px;
+  background: #0B4B63;
+  border: none;
+}
+
+.cs-view-all-wrapper {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+  .cs-container {
+    padding: 0 48px;
+  }
+
+  .cs-slider-viewport {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .cs-card-peaking-bg {
+    display: none; 
+  }
+
+  .cs-card-active {
+    position: static;
+    width: 100%;
+    max-width: 680px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .cs-card-graphic {
+    width: 100%;
+    height: 220px;
+  }
+
+  .cs-card-content {
+    gap: 40px;
+    padding: 32px 24px;
+  }
+
+  .cs-controls-row {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-container {
+    padding: 0 32px;
+  }
+
+  .cs-heading-block {
+    margin-bottom: 48px;
+  }
+
+  .cs-controls-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 36px;
+  }
+
+  .cs-view-all-wrapper {
+    position: static;
+    transform: none;
+  }
+}

@@ -1,0 +1,119 @@
+:root {
+  --black: #000D12;
+  --white: #E9F4F9;
+  --sky: linear-gradient(107deg, #00B4FD -5.68%, #003ACE 86.98%);
+  --blue: #00B4FD;
+  --dark-blue: #003ACE;
+  --text-primary: #E9F4F9;
+  --text-muted: rgba(233, 244, 249, 0.7);
+  --font-primary: 'Inter', -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-chivo: 'Chivo Mono', monospace;
+  --font-roboto: 'Roboto', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.check-icon-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.check-circle {
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: linear-gradient(87deg, #00B4FD -65.9%, #003ACE 78.4%);
+}
+
+.check-mark {
+  position: absolute;
+  left: 9px;
+  top: 10px;
+  width: 13px;
+  height: 13px;
+}
+
+.section-label {
+  color: #2490BB;
+  font-family: var(--font-chivo);
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}

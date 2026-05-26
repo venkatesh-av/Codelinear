@@ -1,0 +1,278 @@
+# N7 Banking Landing Page
+
+N7 Banking is a React and Vite single page marketing site for a modern digital banking platform. The page is built from reusable sections for the hero, solutions, CB7 core banking overview, N7 digital banking overview, insights, case studies, paperless CTA, and footer.
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- Plain CSS modules by component folder
+- SVG and PNG assets imported through Vite
+
+## Requirements
+
+Use a recent Node.js version. Node 18 or newer is recommended.
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Vite will print a local URL, usually:
+
+```text
+http://localhost:5173
+```
+
+Open that URL in your browser to view the site.
+
+## Available Scripts
+
+```bash
+npm run dev
+```
+
+Runs the Vite dev server with hot reload.
+
+```bash
+npm run build
+```
+
+Runs TypeScript checks and creates a production build in `dist/`.
+
+```bash
+npm run preview
+```
+
+Serves the production build locally for review.
+
+```bash
+npm run lint
+```
+
+Runs ESLint across TypeScript and React files.
+
+## Project Structure
+
+```text
+src/
+  App.tsx
+  main.tsx
+  vite-env.d.ts
+  assets/
+  styles/
+    globals.css
+  components/
+    layout/
+      Navbar/
+      Footer/
+    shared/
+      Hero/
+      PaperlessBanner/
+      Solutions/
+      UI/
+    core-banking-cb7/
+      CB7Overview/
+      CB7Features/
+    digital-banking-n7/
+      N7Overview/
+      N7Insights/
+      N7CaseStudies/
+    mockups/
+```
+
+## Main App Flow
+
+`src/App.tsx` controls the page order. It renders:
+
+1. `Navbar`
+2. `HeroSection`
+3. `SolutionsSection`
+4. `CB7Section`
+5. `WhatYouGetSection`
+6. `DigitalBankingSection`
+7. `InsightsSection`
+8. `CaseStudiesSection`
+9. `GoingPaperlessSection`
+10. `Footer`
+
+Each section keeps its JSX and CSS together inside its own folder.
+
+## Important Folders
+
+### `src/assets`
+
+Contains brand images, dashboard mockups, mobile mockups, icons, and decorative SVGs. Vite lets components import these files directly:
+
+```ts
+import maskGroup from '../../../assets/Mask group.svg';
+```
+
+The digital banking overview also has a nested asset folder:
+
+```text
+src/assets/DigitalBankingSection/
+```
+
+### `src/styles`
+
+`globals.css` defines global CSS variables, base reset styles, typography defaults, shared colors, and utility animation classes.
+
+### `src/components/shared/UI`
+
+Reusable UI primitives live here:
+
+- `ActionButton` for all primary, outline, nav, icon, and compact buttons.
+- `LearnMoreLink` for text links with arrow and underline treatment.
+- `TextBlock` for consistent heading and paragraph typography.
+- `CheckIcon` for checklist bullets.
+- `GeometricFourStars` for the reusable Frame 55 star graphic.
+
+Button hover behavior is centralized in `ActionButton.css`. All `ActionButton` variants hover to a white background with blue text.
+
+### `src/components/layout`
+
+Layout-level components:
+
+- `Navbar` is the fixed top navigation with desktop and mobile behavior.
+- `Footer` contains the footer brand mark, office details, navigation links, social links, and copyright.
+
+### `src/components/shared`
+
+Reusable page sections:
+
+- `Hero` contains the landing hero and trusted-by row.
+- `Solutions` contains the solutions grid.
+- `PaperlessBanner` contains the final CTA banner.
+
+### `src/components/core-banking-cb7`
+
+CB7-specific sections:
+
+- `CB7Overview` introduces the cloud-based core banking product.
+- `CB7Features` shows the dashboard image and feature checklist.
+
+### `src/components/digital-banking-n7`
+
+N7-specific sections:
+
+- `N7Overview` contains the light digital banking product canvas.
+- `N7Insights` contains the insights/blog card grid.
+- `N7CaseStudies` contains the case study card slider layout.
+
+### `src/components/mockups`
+
+Reusable mockup and UI composition components used by product visuals or earlier design experiments.
+
+## Styling Notes
+
+- Use component-local CSS files beside the component.
+- Use `ActionButton` for real buttons and CTAs so hover behavior stays consistent.
+- Use `LearnMoreLink` only for link-style CTAs, not for boxed buttons.
+- Keep shared colors in `src/styles/globals.css` when the value should be reused.
+- Keep section-specific layout and spacing inside the section CSS file.
+- Imported SVG assets should be preferred over duplicating large inline SVG blocks.
+
+## Adding A New Section
+
+1. Create a folder under the matching domain, for example `src/components/digital-banking-n7/NewSection/`.
+2. Add `NewSection.tsx` and `NewSection.css`.
+3. Import the CSS inside the component file.
+4. Use shared UI primitives from `src/components/shared/UI`.
+5. Import the new section into `src/App.tsx`.
+6. Run `npm run build` before handing off changes.
+
+## Build Output
+
+Production files are generated into:
+
+```text
+dist/
+```
+
+Do not edit files inside `dist/` directly. They are generated by Vite.
+
+## Deploying To Vercel
+
+This project is ready for Vercel as a Vite app. The included `vercel.json` sets:
+
+- Framework: `vite`
+- Build command: `npm run build`
+- Output directory: `dist`
+- SPA fallback rewrite to `index.html`
+
+### Deploy From The Vercel Dashboard
+
+1. Push this project to a GitHub, GitLab, or Bitbucket repository.
+2. Open Vercel and choose **Add New Project**.
+3. Import the repository.
+4. Confirm these build settings:
+
+```text
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+Install Command: npm install
+```
+
+5. Click **Deploy**.
+
+### Important Repository Note
+
+Keep the repository root at this project folder:
+
+```text
+CodeLinear/
+```
+
+The root should contain `package.json`, `vite.config.ts`, `index.html`, and `src/`. Do not deploy from a parent folder such as `C:/Users/hp`, because that would include unrelated files and confuse Vercel's project detection.
+
+### Deploy With Vercel CLI
+
+Install the Vercel CLI if needed:
+
+```bash
+npm install -g vercel
+```
+
+From the project root, run:
+
+```bash
+vercel
+```
+
+For a production deployment:
+
+```bash
+vercel --prod
+```
+
+## Troubleshooting
+
+If dependencies are missing or the dev server fails to start, reinstall packages:
+
+```bash
+npm install
+```
+
+If the page does not update while developing, stop the dev server and start it again:
+
+```bash
+npm run dev
+```
+
+If a production build fails, fix TypeScript or import errors reported by:
+
+```bash
+npm run build
+```

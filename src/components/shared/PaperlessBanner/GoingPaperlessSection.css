@@ -1,0 +1,103 @@
+
+.paperless-section {
+  position: relative;
+  background: #000D12; 
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(233, 244, 249, 0.04);
+  border-bottom: 1px solid rgba(233, 244, 249, 0.04);
+}
+
+.paperless-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.paperless-content {
+  flex: 0 0 608px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.paperless-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 0 0 458px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .paperless-container {
+    padding: 0 48px;
+    gap: 40px;
+  }
+
+  .paperless-content {
+    flex: 0 1 540px;
+  }
+
+  .paperless-actions {
+    flex: 0 1 400px;
+    gap: 24px;
+  }
+
+  .paperless-actions .action-button {
+    padding: 15px 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .paperless-section {
+    padding: 80px 0;
+  }
+
+  .paperless-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .paperless-content {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .paperless-actions {
+    flex: none;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .paperless-container {
+    padding: 0 24px;
+  }
+
+  .paperless-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .paperless-actions .action-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}
